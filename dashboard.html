@@ -1,0 +1,272 @@
+<!-- Panel de Control del Usuario -->
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between border-b border-primary/10 bg-white dark:bg-slate-900 px-6 md:px-20 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center w-10 h-10 rounded-xl bg-primary text-white">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight text-primary">MiSalud</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center gap-6 mr-6">
+<a class="text-sm font-semibold text-primary" href="#">Panel</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary" href="#">Historial</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary" href="#">Pagos</a>
+</div>
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-slate-200 dark:border-slate-700">
+<div class="flex flex-col items-end hidden sm:flex">
+<span class="text-sm font-bold">Juan Pérez</span>
+<span class="text-xs text-primary font-medium">Plan Premium</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border-2 border-primary">
+<img alt="Avatar del usuario" data-alt="User profile picture of a smiling man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0C3pYeOYM_eCi1Wny8B7atSuGdtRIAQ23tgbHC94-6_Ks6l7YHIR7xUqMOlj1mbhT4_EUjnQW1ITLCP8DMuSRLdPSZjJ7Y3iHrdQsh7lVXqFQ8_MjgzP8FAUz9s4i5rxfW5sbxmK-OGMFH03iyOFoB2L70M0CQL_6EHXhKcEVhKCzOUygndxnaWfZg5M-O9Qze29umgirq9TLShtTkvz1cgow7VF02WdgCY4dm359EmaP_JXBhaJlNGfL88GLkbQwtPT3XGVPYv7B"/>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 px-6 md:px-20 py-8 max-w-7xl mx-auto w-full">
+<!-- Welcome Section -->
+<div class="mb-8">
+<h1 class="text-3xl font-bold tracking-tight">¡Hola de nuevo, Juan!</h1>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Aquí tienes un resumen de tu actividad y salud para hoy.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Main Stats & Actions -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Subscription Summary Card -->
+<section>
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">card_membership</span>
+                                Mi Suscripción
+                            </h3>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col md:flex-row items-center gap-6">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-1 rounded-md bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">Activa</span>
+<span class="text-sm text-slate-500">Premium Familiar</span>
+</div>
+<h4 class="text-2xl font-bold mb-2">Plan MiSalud Completo</h4>
+<p class="text-sm text-slate-500 mb-4">Tu cobertura incluye a 4 beneficiarios y telemedicina 24/7 sin costo adicional.</p>
+<div class="flex flex-wrap gap-3">
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors">Gestionar Plan</button>
+<button class="bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 px-4 py-2 rounded-lg text-sm font-bold transition-colors">Ver Beneficios</button>
+</div>
+</div>
+<div class="w-full md:w-48 h-32 bg-primary/5 rounded-xl flex flex-col items-center justify-center border border-dashed border-primary/30">
+<span class="text-xs text-primary font-bold uppercase">Próximo Pago</span>
+<span class="text-2xl font-bold">15 Oct</span>
+<span class="text-sm text-slate-500">2024</span>
+</div>
+</div>
+</section>
+<!-- Medical Appointments -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+                                    Próximas Citas
+                                </h3>
+<a class="text-primary text-sm font-bold hover:underline" href="#">Ver todas</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Appointment 1 -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex gap-4">
+<div class="w-14 h-14 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex flex-col items-center justify-center text-primary">
+<span class="text-xs font-bold leading-none">SEP</span>
+<span class="text-xl font-black">28</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-slate-900 dark:text-white">Psicología</p>
+<p class="text-sm text-slate-500">Dr. Roberto Méndez</p>
+<div class="flex items-center gap-1 mt-2 text-xs text-slate-400">
+<span class="material-symbols-outlined text-xs">schedule</span>
+                                            16:30 - Clínica Central
+                                        </div>
+</div>
+</div>
+<!-- Appointment 2 -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex gap-4">
+<div class="w-14 h-14 rounded-lg bg-teal-50 dark:bg-teal-900/20 flex flex-col items-center justify-center text-teal-600">
+<span class="text-xs font-bold leading-none">OCT</span>
+<span class="text-xl font-black">05</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-slate-900 dark:text-white">Revisión Dental</p>
+<p class="text-sm text-slate-500">Dra. Lucía Torres</p>
+<div class="flex items-center gap-1 mt-2 text-xs text-slate-400">
+<span class="material-symbols-outlined text-xs">schedule</span>
+                                            09:00 - Centro Odontológico
+                                        </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Credits Status -->
+<section>
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">account_balance_wallet</span>
+                                Estado de Créditos Salud
+                            </h3>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="flex-1 w-full">
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium">Crédito Disponible</span>
+<span class="text-sm font-bold text-primary">$1,250.00 / $2,000.00</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-3">
+<div class="bg-primary h-3 rounded-full" style="width: 62.5%"></div>
+</div>
+<div class="mt-4 grid grid-cols-2 gap-4">
+<div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50">
+<p class="text-xs text-slate-500">Solicitado</p>
+<p class="font-bold">$750.00</p>
+</div>
+<div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50">
+<p class="text-xs text-slate-500">Próxima Cuota</p>
+<p class="font-bold">$125.00</p>
+</div>
+</div>
+</div>
+<button class="w-full md:w-auto flex items-center justify-center gap-2 bg-primary/10 hover:bg-primary/20 text-primary py-3 px-6 rounded-xl font-bold transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+                                        Solicitar Crédito
+                                    </button>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Quick Access -->
+<div class="space-y-8">
+<section>
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">bolt</span>
+                                Accesos Rápidos
+                            </h3>
+<div class="grid grid-cols-2 gap-3">
+<a class="p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-primary transition-colors text-center" href="#">
+<span class="material-symbols-outlined text-3xl text-primary mb-2">medical_services</span>
+<p class="text-sm font-bold">Urgencias</p>
+</a>
+<a class="p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-primary transition-colors text-center" href="#">
+<span class="material-symbols-outlined text-3xl text-primary mb-2">video_chat</span>
+<p class="text-sm font-bold">Telemedicina</p>
+</a>
+<a class="p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-primary transition-colors text-center" href="#">
+<span class="material-symbols-outlined text-3xl text-primary mb-2">lab_research</span>
+<p class="text-sm font-bold">Laboratorio</p>
+</a>
+<a class="p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-primary transition-colors text-center" href="#">
+<span class="material-symbols-outlined text-3xl text-primary mb-2">pill</span>
+<p class="text-sm font-bold">Farmacia</p>
+</a>
+</div>
+</section>
+<section>
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">group</span>
+                                Especialistas Sugeridos
+                            </h3>
+<div class="space-y-3">
+<div class="flex items-center gap-3 p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden">
+<img alt="Doctor" data-alt="Portrait of a female cardiologist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKB3gLQ7pqvFHm-VlOzNrWCGN8gaE4LFJvyWFCDlwMCvwdAxam0_qydjWNse-MDDmRcs2W4ohiXsvJX8bFNdMOcXoGOdf0rSaAPd36pen5_HQR1wkgitqX16UEb8xmxeSepX0xsVpFZEvIy4rqxnb8zlOLPJxFnV9u9b4vYeO3pH4cuRY5N3XXvmxTLPpDnICV1dJ1-l3RKNyJK9lE4K93LGrgmCFaCWrkroItTlO_9M6W1qdeOKzv0y-SkJTLDv_rAeBit3NxpXDK"/>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Dr. Elena K.</p>
+<p class="text-xs text-slate-500">Cardiología</p>
+</div>
+<button class="text-primary hover:text-primary/70">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden">
+<img alt="Doctor" data-alt="Portrait of a male dermatologist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwsvqS9f0ogdlF49Fcz8MaLm_TLLh4gqg6ItQfwWvhxLZbsJODCubkRxjb3zfPO_AQjOA5N49_5_HutJ41IGJ5tG-px2XXYBYHG56pZfNW7rHqDTmdzSY70fXkg05jvpae4PE-3Np5FtNOP_kLsUoHqXSeKxHpMWYKF8byujSpgh3s7g70yA1WMdjjqba7dMM-rQNrzCYQR5tLP4VCpQKogcgsxY7KdYD9_0NT6gJdOidEBBOZuO_tRzZIGaB5RHULyMqJREK1b8u5"/>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Dr. Mario V.</p>
+<p class="text-xs text-slate-500">Dermatología</p>
+</div>
+<button class="text-primary hover:text-primary/70">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<button class="w-full py-2 text-sm text-slate-500 hover:text-primary font-medium transition-colors">Explorar directorio médico</button>
+</div>
+</section>
+<!-- Promotion/Info -->
+<div class="rounded-2xl overflow-hidden relative aspect-[4/3] group cursor-pointer shadow-lg shadow-primary/10">
+<img alt="Promoción" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Modern clinic interior with professional medical equipment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKFnZZwjW6WRE07HLSvCiOis7fUK-7g-tJD1ogSPZ1TmwRIU_mu7Xy_45QRG09jTCWNcbjPs3KHx5tfbsIMuM2TJtMM-KP-t7h6fhc_xkwFn1KfkRS5L6tLLewVxlbix5-GNqdVawWsYv8xmEuSmI_1z0eyHVhCy-H2GvzFXzPrXV2MqXX3q0TlVG_zeE0M7V50hJ9Se0zqTJF5CQlOO5U1RHbE_ZbScZlsZhWHCXNyAiQB49ujOKR8kJLuUfnZ0JGxZ9bl21gDgE8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end">
+<h4 class="text-white font-bold text-lg">Nueva Clínica Dental</h4>
+<p class="text-white/80 text-xs mt-1 leading-relaxed">Conoce nuestras nuevas instalaciones en el sector norte con descuentos exclusivos.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Mobile Nav -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 flex justify-around py-3 px-2 z-50">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[10px] font-bold">Panel</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-[10px] font-bold">Citas</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[10px] font-bold">Pagos</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Perfil</span>
+</a>
+</nav>
+</div>
+</div>
+</body></html>
